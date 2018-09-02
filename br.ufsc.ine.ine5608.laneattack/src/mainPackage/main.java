@@ -5,6 +5,8 @@
  */
 package mainPackage;
 
+import InterfacePackage.InterfaceCharacter;
+
 /**
  *
  * @author Vinicius Nascimento
@@ -13,8 +15,10 @@ package mainPackage;
 public class main {
 
     public static void main(String[] args) {
-        MainController main = new MainController();
-        main.beginProgram();
+//        MainController main = new MainController();
+//        main.beginProgram();
+        InterfaceCharacter i = new InterfaceCharacter();
+        i.setVisible(true);
     }
     
 }
