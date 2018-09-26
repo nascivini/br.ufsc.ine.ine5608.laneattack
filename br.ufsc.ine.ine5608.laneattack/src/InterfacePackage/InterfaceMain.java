@@ -5,6 +5,8 @@
  */
 package InterfacePackage;
 
+import mainPackage.MainController;
+
 /**
  *
  * @author vinicius.nascimento
@@ -14,7 +16,15 @@ public class InterfaceMain extends javax.swing.JFrame {
     /**
      * Creates new form InterfaceMain
      */
-    public InterfaceMain() {
+    
+    private MainController mainController;
+    
+    public InterfaceMain(MainController main) {
+        this.mainController = main;
+        initComponents();
+    }
+    
+    public InterfaceMain(){
         initComponents();
     }
 
@@ -42,6 +52,11 @@ public class InterfaceMain extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("Conectar ao Servidor");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Configurações");
 
@@ -122,6 +137,14 @@ public class InterfaceMain extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(evt.getSource().equals(jButton1)){
+            this.mainController.getNetGamesController().conectar();
+        }
+        else{}
+        // to do (demais botões)
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
