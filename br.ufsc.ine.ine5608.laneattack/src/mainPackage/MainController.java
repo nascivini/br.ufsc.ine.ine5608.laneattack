@@ -7,6 +7,7 @@ package mainPackage;
 
 import CharacterPackage.CharacterController;
 import ClassPackage.ClassController;
+import InterfacePackage.InterfaceMain;
 import NetGamesPackage.NetGamesController;
 import PlayerPackage.PlayerController;
 import RoundPackage.RoundController;
@@ -22,7 +23,7 @@ public class MainController {
     private RoundController roundController;
     private PlayerController playerController;
     private ClassController classController;
-    private MainScreen mainScreen;
+    private InterfaceMain interfaceMain;
     
     public MainController(){
         this.netGamesController = new NetGamesController(this);
@@ -30,11 +31,10 @@ public class MainController {
         this.roundController = new RoundController(this);
         this.playerController = new PlayerController(this);
         this.classController = new ClassController(this);
-        this.mainScreen = new MainScreen(this);
     }
     
     public void beginProgram(){
-        this.mainScreen.setVisible(true);
+        this.interfaceMain.setVisible(true);
     }
 
     public NetGamesController getNetGamesController() {
